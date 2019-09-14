@@ -4,8 +4,6 @@ import com.javafollower.refactoring.entity.*;
 import com.javafollower.refactoring.performance.ComedyCalculator;
 import com.javafollower.refactoring.performance.PerformanceCalculator;
 import com.javafollower.refactoring.performance.TragedyCalculator;
-import org.joda.money.CurrencyUnit;
-import org.joda.money.Money;
 
 import java.lang.reflect.Method;
 
@@ -16,33 +14,24 @@ public class CreateStatementData {
     public Statement statement(Invoice invoice, Plays plays) {
         statement = new Statement(invoice.getCustomer(), invoice.getPerformances(), plays);
         statement.getPerformances().forEach(this::renderPlainText);
-        statement.setAmount(usd(totalAmount()));
+        statement.setAmount(totalAmount());
         statement.setVolumeCredits(totalVolumeCredits());
         return statement;
     }
 
     private void renderPlainText(Performance performance) {
         performance.setPlay(getPlay(performance.getPlayID()));
-        performance.setAmount(usd(performanceAmount(performance)));
-        performance.setVolumeCredits(performanceVolumeCredits(performance));
+        PerformanceCalculator performanceCalculator = createPerformanceCalculator(performance);
+        performance.setAmount(performanceCalculator.amount());
+        performance.setVolumeCredits(performanceCalculator.volumeCredits());
     }
 
     private int totalAmount() {
-        return statement.getPerformances().stream().mapToInt(this::performanceAmount).sum();
+        return statement.getPerformances().stream().mapToInt(Performance::getAmount).sum();
     }
 
     private int totalVolumeCredits() {
         return statement.getPerformances().stream().mapToInt(Performance::getVolumeCredits).sum();
-    }
-
-    private int performanceAmount(Performance performance) {
-        PerformanceCalculator performanceCalculator = createPerformanceCalculator(performance);
-        return performanceCalculator.amount();
-    }
-
-    private int performanceVolumeCredits(Performance performance) {
-        PerformanceCalculator performanceCalculator = createPerformanceCalculator(performance);
-        return performanceCalculator.volumeCredits();
     }
 
     private PerformanceCalculator createPerformanceCalculator(Performance performance) {
@@ -54,10 +43,6 @@ public class CreateStatementData {
             default:
                 throw new Error("unknown type " + performance.getPlay().getType());
         }
-    }
-
-    private String usd(int amount) {
-        return Money.of(CurrencyUnit.USD, amount / 100).toString();
     }
 
     private Play getPlay(String playID) {

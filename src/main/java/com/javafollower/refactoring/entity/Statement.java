@@ -14,7 +14,7 @@ public class Statement {
     private String customer;
     private List<Performance> performances;
     private Plays plays;
-    private String amount ;
+    private int amount ;
     private int volumeCredits;
 
     public Statement(String customer, List<Performance> performances, Plays plays) {

@@ -2,6 +2,8 @@ package com.javafollower.refactoring;
 
 import com.javafollower.refactoring.entity.*;
 import com.javafollower.refactoring.service.CreateStatementData;
+import org.joda.money.CurrencyUnit;
+import org.joda.money.Money;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,13 +30,17 @@ public class PrintStatement {
         );
     }
 
+    private static String usd(int amount) {
+        return Money.of(CurrencyUnit.USD, amount / 100).toString();
+    }
+
     private static void renderPlainText(Statement statement) {
         System.out.println("Statement for " + statement.getCustomer());
         for (Performance performance : statement.getPerformances()) {
             System.out.println("    " + performance.getPlay().getName() + ": "
-                    + performance.getAmount() + " (" + performance.getAudience() + " seats)");
+                    + usd(performance.getAmount()) + " (" + performance.getAudience() + " seats)");
         }
-        System.out.println("Amount owed is " + statement.getAmount());
+        System.out.println("Amount owed is " + usd(statement.getAmount()));
         System.out.println("You earned " + statement.getVolumeCredits() + " credits");
     }
 

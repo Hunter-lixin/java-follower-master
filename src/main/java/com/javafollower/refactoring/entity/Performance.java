@@ -11,7 +11,7 @@ public class Performance {
     private String playID;
     private int audience;
     private Play play;
-    private String amount;
+    private int amount;
     private int volumeCredits;
 
     public Performance(String playID, int audience) {
