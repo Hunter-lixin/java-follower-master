@@ -24,6 +24,7 @@ public class CreateStatementData {
     private void renderPlainText(Performance performance) {
         performance.setPlay(getPlay(performance.getPlayID()));
         performance.setAmount(usd(performanceAmount(performance)));
+        performance.setVolumeCredits(performanceVolumeCredits(performance));
     }
 
     private int totalAmount() {
@@ -31,7 +32,7 @@ public class CreateStatementData {
     }
 
     private int totalVolumeCredits() {
-        return statement.getPerformances().stream().mapToInt(this::performanceVolumeCredits).sum();
+        return statement.getPerformances().stream().mapToInt(Performance::getVolumeCredits).sum();
     }
 
     private int performanceAmount(Performance performance) {
