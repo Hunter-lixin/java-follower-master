@@ -1,4 +1,4 @@
-package com.javafollower.refactoring.entity;
+package com.javafollower.refactoring.statement.entity;
 
 import lombok.Getter;
 import lombok.Setter;

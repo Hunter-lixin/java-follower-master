@@ -1,9 +1,9 @@
-package com.javafollower.refactoring.service;
+package com.javafollower.refactoring.statement.service;
 
-import com.javafollower.refactoring.entity.*;
-import com.javafollower.refactoring.performance.ComedyCalculator;
-import com.javafollower.refactoring.performance.PerformanceCalculator;
-import com.javafollower.refactoring.performance.TragedyCalculator;
+import com.javafollower.refactoring.statement.entity.*;
+import com.javafollower.refactoring.statement.performance.ComedyCalculator;
+import com.javafollower.refactoring.statement.performance.PerformanceCalculator;
+import com.javafollower.refactoring.statement.performance.TragedyCalculator;
 
 import java.lang.reflect.Method;
 

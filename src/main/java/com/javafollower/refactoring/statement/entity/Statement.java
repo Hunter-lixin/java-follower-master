@@ -1,4 +1,4 @@
-package com.javafollower.refactoring.entity;
+package com.javafollower.refactoring.statement.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,12 +9,18 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Invoice {
+public class Statement {
+
     private String customer;
     private List<Performance> performances;
+    private Plays plays;
+    private int amount ;
+    private int volumeCredits;
 
-    public Invoice(String customer, List<Performance> performances) {
+    public Statement(String customer, List<Performance> performances, Plays plays) {
         this.customer = customer;
         this.performances = performances;
+        this.plays = plays;
     }
+
 }

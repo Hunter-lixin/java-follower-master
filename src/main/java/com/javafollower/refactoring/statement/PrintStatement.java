@@ -1,7 +1,7 @@
-package com.javafollower.refactoring;
+package com.javafollower.refactoring.statement;
 
-import com.javafollower.refactoring.entity.*;
-import com.javafollower.refactoring.service.CreateStatementData;
+import com.javafollower.refactoring.statement.entity.*;
+import com.javafollower.refactoring.statement.service.CreateStatementData;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
 

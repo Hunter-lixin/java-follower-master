@@ -1,7 +1,7 @@
-package com.javafollower.refactoring.performance;
+package com.javafollower.refactoring.statement.performance;
 
-import com.javafollower.refactoring.entity.Performance;
-import com.javafollower.refactoring.entity.Play;
+import com.javafollower.refactoring.statement.entity.Performance;
+import com.javafollower.refactoring.statement.entity.Play;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
