@@ -18,6 +18,7 @@ public class PrintStatement {
 
         List<Invoice> invoices = new ArrayList<>();
         invoices.add(new Invoice("BigCo", performances));
+        invoices.add(new Invoice("HelloKitty", performances));
 
         return invoices;
     }
@@ -52,6 +53,7 @@ public class PrintStatement {
         for (Invoice invoice : invoices) {
             Statement statement = createStatementData.statement(invoice, plays);
             renderPlainText(statement);
+            System.out.println();
         }
 
 
