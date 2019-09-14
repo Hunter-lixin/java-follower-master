@@ -12,6 +12,7 @@ public class Performance {
     private int audience;
     private Play play;
     private String amount;
+    private int volumeCredits;
 
     public Performance(String playID, int audience) {
         this.playID = playID;

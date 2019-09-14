@@ -19,4 +19,12 @@ public class PerformanceCalculator {
         this.play = play;
     }
 
+    public int amount() {
+        throw new Error("subClass responsibility");
+    }
+
+    public int volumeCredits() {
+        return Math.max(performance.getAudience() - 30, 0);
+    }
+
 }

@@ -2,6 +2,7 @@ package com.javafollower.refactoring.service;
 
 import com.javafollower.refactoring.entity.*;
 import com.javafollower.refactoring.performance.ComedyCalculator;
+import com.javafollower.refactoring.performance.PerformanceCalculator;
 import com.javafollower.refactoring.performance.TragedyCalculator;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
@@ -22,32 +23,33 @@ public class CreateStatementData {
 
     private void renderPlainText(Performance performance) {
         performance.setPlay(getPlay(performance.getPlayID()));
-        performance.setAmount(usd(amountFor(performance)));
+        performance.setAmount(usd(performanceAmount(performance)));
     }
 
     private int totalAmount() {
-        return statement.getPerformances().stream().mapToInt(this::amountFor).sum();
+        return statement.getPerformances().stream().mapToInt(this::performanceAmount).sum();
     }
 
     private int totalVolumeCredits() {
-        return statement.getPerformances().stream().mapToInt(this::volumeCreditsFor).sum();
+        return statement.getPerformances().stream().mapToInt(this::performanceVolumeCredits).sum();
     }
 
-    private int volumeCreditsFor(Performance performance) {
-        int result = 0;
-        result += Math.max(performance.getAudience() - 30, 0);
-        if ("comedy".equals(getPlay(performance.getPlayID()).getType())) {
-            result += Math.floor(performance.getAudience() / 5);
-        }
-        return result;
+    private int performanceAmount(Performance performance) {
+        PerformanceCalculator performanceCalculator = createPerformanceCalculator(performance);
+        return performanceCalculator.amount();
     }
 
-    private int amountFor(Performance performance) {
+    private int performanceVolumeCredits(Performance performance) {
+        PerformanceCalculator performanceCalculator = createPerformanceCalculator(performance);
+        return performanceCalculator.volumeCredits();
+    }
+
+    private PerformanceCalculator createPerformanceCalculator(Performance performance) {
         switch (performance.getPlay().getType()) {
             case "tragedy":
-                return new TragedyCalculator(performance, performance.getPlay()).amount();
+                return new TragedyCalculator(performance, performance.getPlay());
             case "comedy":
-                return new ComedyCalculator(performance, performance.getPlay()).amount();
+                return new ComedyCalculator(performance, performance.getPlay());
             default:
                 throw new Error("unknown type " + performance.getPlay().getType());
         }
