@@ -44,7 +44,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        String digists = "23";
+        String digists = "13";
         Solution solution = new Solution();
         List<String> result = solution.letterCombinations(digists);
         System.out.println(result);
