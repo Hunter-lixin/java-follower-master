@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.moveZeros;
+package com.javafollower.leetcode;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ import java.util.Arrays;
  * 必须在原数组上操作，不能拷贝额外的数组。
  * 尽量减少操作次数。
  */
-public class Solution {
+public class MoveZeroes {
     public void moveZeroes(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -31,7 +31,7 @@ public class Solution {
 
     public static void main(String[] args) {
         int[] nums = new int[]{0, 1, 0, 3, 12};
-        Solution solution = new Solution();
+        MoveZeroes solution = new MoveZeroes();
         solution.moveZeroes(nums);
 
         System.out.println(Arrays.toString(nums));

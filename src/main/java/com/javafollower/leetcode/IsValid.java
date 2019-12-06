@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.isValid;
+package com.javafollower.leetcode;
 
 import java.util.HashMap;
 import java.util.Stack;
@@ -34,11 +34,11 @@ import java.util.Stack;
  * 输出: true
  *
  */
-public class Solution {
+public class IsValid {
 
     private HashMap<Character, Character> mappings = new HashMap<>();
 
-    public Solution() {
+    public IsValid() {
         mappings.put(')', '(');
         mappings.put('}', '{');
         mappings.put(']', '[');

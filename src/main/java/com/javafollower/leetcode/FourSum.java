@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.fourSum;
+package com.javafollower.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +22,7 @@ import java.util.List;
  * [-2,  0, 0, 2]
  * ]
  */
-public class Solution {
+public class FourSum {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
@@ -57,7 +57,7 @@ public class Solution {
 //        int[] nums = {1, 0, -1, 0, -2, 2};
         int[] nums = {-1, 0, 1, 2, -1, -4};
         int target = -1;
-        Solution solution = new Solution();
+        FourSum solution = new FourSum();
         List<List<Integer>> result = solution.fourSum(nums, target);
         System.out.println(result);
     }

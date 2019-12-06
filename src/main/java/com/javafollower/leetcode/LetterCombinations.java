@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.letterCombinations;
+package com.javafollower.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Objects;
  * 输入："23"
  * 输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
  */
-public class Solution {
+public class LetterCombinations {
 
     private String[] letterMap = {" ", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
@@ -45,7 +45,7 @@ public class Solution {
 
     public static void main(String[] args) {
         String digists = "13";
-        Solution solution = new Solution();
+        LetterCombinations solution = new LetterCombinations();
         List<String> result = solution.letterCombinations(digists);
         System.out.println(result);
     }

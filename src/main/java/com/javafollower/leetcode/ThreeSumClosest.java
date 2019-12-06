@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.threeSumClosest;
+package com.javafollower.leetcode;
 
 import java.util.Arrays;
 
@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.<br/>
  * 与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).<br/>
  */
-public class Solution {
+public class ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
         int closest = nums[0] + nums[1] + nums[2];
@@ -42,7 +42,7 @@ public class Solution {
     public static void main(String[] args) {
         int target = 1;
         int[] nums = {-1, 2, 1, -4, 0};
-        Solution solution = new Solution();
+        ThreeSumClosest solution = new ThreeSumClosest();
         int result = solution.threeSumClosest(nums, target);
         System.out.println(result);
     }

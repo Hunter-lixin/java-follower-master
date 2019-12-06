@@ -1,9 +1,9 @@
-package com.javafollower.leetcode.numberOffGame;
+package com.javafollower.leetcode;
 
 /**
  * 有n个人围成一圈，顺序编号。从第1个人开始报数（从1-m报数），凡报到m的人退出圈子，问最后留下的是原来第几号的那位？
  */
-public class Solution {
+public class NumberOffGame {
     public String numberOffGame(int maxCount, int num) {
 
         if (num <= 1) {
@@ -37,8 +37,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        String result = solution.numberOffGame(11, 10);
+        NumberOffGame solution = new NumberOffGame();
+        String result = solution.numberOffGame(100, 3);
         System.out.println(result);
     }
 

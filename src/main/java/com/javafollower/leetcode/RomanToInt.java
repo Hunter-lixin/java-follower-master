@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.romanToInt;
+package com.javafollower.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +46,7 @@ import java.util.Map;
  * 输出: 1994
  * 解释: M = 1000, CM = 900, XC = 90, IV = 4.
  */
-public class Solution {
+public class RomanToInt {
     public int romanToInt(String s) {
 
         Map<Character, Integer> transMap = new HashMap<>();
@@ -78,7 +78,7 @@ public class Solution {
 
     public static void main(String[] args) {
         String s = "MCMXCIV";
-        Solution solution = new Solution();
+        RomanToInt solution = new RomanToInt();
         int result = solution.romanToInt(s);
         System.out.println(result);
     }

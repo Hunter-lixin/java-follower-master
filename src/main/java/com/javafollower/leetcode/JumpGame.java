@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.jump;
+package com.javafollower.leetcode;
 
 /**
  * 给定一个非负整数数组，你最初位于数组的第一个位置。
@@ -18,7 +18,7 @@ package com.javafollower.leetcode.jump;
  * 假设你总是可以到达数组的最后一个位置。
  *
  */
-public class Solution {
+public class JumpGame {
     public int jump(int[] nums) {
         int end = 0;
         int maxPosition = 0;
@@ -35,7 +35,7 @@ public class Solution {
 
     public static void main(String[] args) {
         int[] nums = new int[]{2, 3, 1, 1, 4};
-        Solution solution = new Solution();
+        JumpGame solution = new JumpGame();
         int result = solution.jump(nums);
         System.out.println(result);
     }

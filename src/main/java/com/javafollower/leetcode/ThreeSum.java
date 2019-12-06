@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.threesum;
+package com.javafollower.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ import java.util.List;
  * [-1, -1, 2]
  * ]
  */
-public class Solution {
+public class ThreeSum {
 
     private static List<List<Integer>> threeSum(int[] nums) {
 

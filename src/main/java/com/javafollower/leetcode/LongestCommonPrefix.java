@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.longestCommonPrefix;
+package com.javafollower.leetcode;
 
 /**
  * 编写一个函数来查找字符串数组中的最长公共前缀。
@@ -17,7 +17,7 @@ package com.javafollower.leetcode.longestCommonPrefix;
  * 说明:
  * 所有输入只包含小写字母 a-z 。
  */
-public class Solution {
+public class LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) {
             return "";
@@ -39,7 +39,7 @@ public class Solution {
 
     public static void main(String[] args) {
         String[] strs = {"flower","flow","flight"};
-        Solution solution = new Solution();
+        LongestCommonPrefix solution = new LongestCommonPrefix();
         String result = solution.longestCommonPrefix(strs);
         System.out.println(result);
     }

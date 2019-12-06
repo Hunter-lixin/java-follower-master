@@ -1,4 +1,4 @@
-package com.javafollower.leetcode.longestPalindrome;
+package com.javafollower.leetcode;
 
 /**
  * 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
@@ -14,7 +14,7 @@ package com.javafollower.leetcode.longestPalindrome;
  * 输入: "cbbd"
  * 输出: "bb"
  */
-public class Solution {
+public class LongestPalindrome {
     public String longestPalindrome(String s) {
         if (s.length() <= 1) return s;
         String result = s.substring(0, 1);
@@ -43,7 +43,7 @@ public class Solution {
 
     public static void main(String[] args) {
         String s = "abab";
-        Solution solution = new Solution();
+        LongestPalindrome solution = new LongestPalindrome();
         String result = solution.longestPalindrome(s);
         System.out.println(result);
     }
