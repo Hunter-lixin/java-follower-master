@@ -36,10 +36,4 @@ public class NumberOffGame {
         return result.substring(1);
     }
 
-    public static void main(String[] args) {
-        NumberOffGame solution = new NumberOffGame();
-        String result = solution.numberOffGame(100, 3);
-        System.out.println(result);
-    }
-
 }
