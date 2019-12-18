@@ -66,8 +66,4 @@ public class CommonUtils {
         return toggleCaseFirstLetter(result.toString(), TO_LOWER_CASE);
     }
 
-    public static void main(String[] args) {
-        String str = "ww";
-        System.out.println(isContainChinese(str));
-    }
 }
