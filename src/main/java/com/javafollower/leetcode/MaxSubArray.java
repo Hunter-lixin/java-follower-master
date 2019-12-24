@@ -40,14 +40,14 @@ package com.javafollower.leetcode;
 public class MaxSubArray {
 
     public int maxSubArray(int[] nums) {
-        int[] dp = new int[nums.length];
+        int length = nums.length;
+        int[] dp = new int[length];
         dp[0] = nums[0];
-        int result = nums[0];
-        for (int i = 1; i < nums.length; i++) {
+        int result = dp[0];
+        for (int i = 1; i < length; i++) {
             dp[i] = Math.max(nums[i], dp[i - 1] + nums[i]);
             result = Math.max(result, dp[i]);
         }
         return result;
     }
-
 }
